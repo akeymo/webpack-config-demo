@@ -19,7 +19,13 @@ module.exports = {
         },
         proxy: {
             // 配置代理，解决跨域
-            "/api": "http://localhost:3000"
+            "/api": {
+                target: "http://localhost:3000",
+                // 如果后端接口不带/api,但为了有一个统计处理的规则
+                // pathRewrite: {
+                //     '/api': ''
+                // }
+            }
         }
     },
 
